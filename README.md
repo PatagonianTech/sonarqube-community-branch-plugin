@@ -1,7 +1,18 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mc1arke_sonarqube-community-branch-plugin&metric=alert_status)](https://sonarcloud.io/dashboard?id=mc1arke_sonarqube-community-branch-plugin)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/mc1arke/sonarqube-community-branch-plugin/.github/workflows/build.yml?branch=master&logo=github)](https://github.com/mc1arke/sonarqube-community-branch-plugin?workflow=build)
-
 # Sonarqube Community Branch Plugin
+This repository is just a clone of [Sonarqube m1carke plugin](https://github.com/mc1arke/sonarqube-community-branch-plugin), specifically from [this commit](https://github.com/mc1arke/sonarqube-community-branch-plugin/commit/c16bb51dc5bbebf3bf8e3d1aeee62195bfb38814)
+
+- No changes were made to the code. This is here to have our own internal copy of the code.
+- Some unit test classes were erased because they failed to compile.
+
+## How to use
+- Go to this [repository](https://bitbucket.org/patagoniantech/sonarqube-nodes-library/src/main/) and compile the jar and put it in this repo here: lib/nodes-0.5.0.jar
+- Install java 17. Recommended distribution is [Temurin](https://adoptium.net/temurin/releases/)
+- The easiest way is to use a java IDE (Eclipse or IntelliJ) and open the project and use the IDE tools to generate the jar file. The specific command you need to launch (with or without and IDE) is "gradle build" and that will generate the jar file.
+- Below is the original readme.md contents of the project.
+
+
+
+## Sonarqube Community Branch Plugin
 
 A plugin for SonarQube to allow branch analysis in the Community version.
 
