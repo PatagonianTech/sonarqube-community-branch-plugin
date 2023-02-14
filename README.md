@@ -1,7 +1,7 @@
 # Sonarqube Community Branch Plugin
 This repository is just a clone of [Sonarqube m1carke plugin](https://github.com/mc1arke/sonarqube-community-branch-plugin), specifically from [this commit](https://github.com/mc1arke/sonarqube-community-branch-plugin/commit/c16bb51dc5bbebf3bf8e3d1aeee62195bfb38814)
 
-- No changes were made to the code. This is here to have our own internal copy of the code.
+- No changes were made to the code. This is here just to have our own copy of the code.
 - Some unit test classes were erased because they failed to compile.
 
 ## How to use
