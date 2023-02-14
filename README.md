@@ -5,7 +5,7 @@ This repository is just a clone of [Sonarqube m1carke plugin](https://github.com
 - Some unit test classes were erased because they failed to compile.
 
 ## How to use
-- Go to this [repository](https://bitbucket.org/patagoniantech/sonarqube-nodes-library/src/main/) and compile the jar and put it in this repo here: lib/nodes-0.5.0.jar
+- Go to this [repository](https://github.com/PatagonianTech/sonarqube-nodes-library) and compile the jar and put it in this repo here: lib/nodes-0.5.0.jar
 - Install java 17. Recommended distribution is [Temurin](https://adoptium.net/temurin/releases/)
 - The easiest way is to use a java IDE (Eclipse or IntelliJ) and open the project and use the IDE tools to generate the jar file. The specific command you need to launch (with or without and IDE) is "gradle build" and that will generate the jar file.
 - Below is the original readme.md contents of the project.
