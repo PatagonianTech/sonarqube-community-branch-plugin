@@ -35,7 +35,7 @@ jobs:
         run: |
           ./gradlew clean release \
             -Prelease.useAutomaticVersion=true \
-            -Prelease.releaseVersion=${{ releaseVersion }}
+            -Prelease.releaseVersion=${{ env.releaseVersion }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       -
@@ -50,8 +50,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: success()
         with:
-          name: ${{ releaseVersion }}
-          tag_name: ${{ releaseVersion }}
+          name: ${{ env.releaseVersion }}
+          tag_name: ${{ env.releaseVersion }}
           draft: true
           files: |
             build/libs/*.jar
