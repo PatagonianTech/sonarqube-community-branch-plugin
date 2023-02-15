@@ -19,11 +19,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: set git global user and package
-        run: |
-          git config --global user.email noreply@github.com
-          git config --global user.name GitHub
-          ./gradlew clean release
+      - name: gradle package
+        run: ./gradlew jar
       - name: release
         uses: softprops/action-gh-release@v1
         with:
