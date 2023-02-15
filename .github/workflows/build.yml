@@ -1,67 +1,29 @@
-# Java build based on https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
-# 
-# Create a jar of the project and put it in the release section in github
-# 
 name: build
 
 # execute when a new tag is pushed
 on:
   push:
     tags:
-      - '*'
+      - "v*.*.*"
 
 jobs:
-  release:
+  createRelease:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write    
-    env:
-      releaseVersion: 1.14.0
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      -
-        name: Set up Java
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
-      -
-        name: Set up Git
-        run: |
-          git config user.name GitHub
-          git config user.email noreply@github.com
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
-      -
-        name: Release
-        if: success()
-        run: |
-          ./gradlew clean release \
-            -Prelease.useAutomaticVersion=true \
-            -Prelease.releaseVersion=${{ env.releaseVersion }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      -
-        name: Archive artifact
-        if: success()
-        uses: actions/upload-artifact@v3
-        with:
-          name: release
-          path: build/libs/*.jar
-      -
-        name: GitHub Release
+      - name: package
+        run: ./gradlew clean release
+      - name: release
         uses: softprops/action-gh-release@v1
-        if: success()
         with:
-          name: ${{ env.releaseVersion }}
-          tag_name: ${{ github.ref }}
-          draft: false
-          files: |
-            build/libs/*.jar
+          files: build/libs/*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
