@@ -6,9 +6,24 @@ This repository is just a clone of [Sonarqube m1carke plugin](https://github.com
 
 ## How to use
 - Go to this [repository](https://github.com/PatagonianTech/sonarqube-nodes-library) and compile the jar and put it in this repo here: lib/nodes-0.5.0.jar
-- Install java 17. Recommended distribution is [Temurin](https://adoptium.net/temurin/releases/)
-- The easiest way is to use a java IDE (Eclipse or IntelliJ) and open the project and use the IDE tools to generate the jar file. The specific command you need to launch (with or without and IDE) is "gradle build" and that will generate the jar file.
-- Below is the original readme.md contents of the project.
+- Use the generated jar from the "releases" section of this repository
+- If you made changes to the code or need to generate a new release, just make a tag and the github action in this repository will generate a new release with a new jar in it
+- Example of how to create a tag in the cloned repository using git:
+
+```
+git tag v1.14.0
+git push origin v1.14.0
+```
+
+
+
+
+
+Below is the original readme.md contents of the project.
+
+
+
+
 
 
 
