@@ -20,7 +20,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: gradle create jar
-        run: ./gradlew jar
+        run: ./gradlew build
       - name: upload jar
         uses: actions/upload-artifact@v3
         with:
