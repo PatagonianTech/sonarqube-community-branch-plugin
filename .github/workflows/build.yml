@@ -21,11 +21,8 @@ jobs:
           distribution: 'temurin'
       - name: Set up Git
         run: |
-          git config user.name GitHub
-          git config user.email noreply@github.com
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}             
+          git config --global user.email noreply@github.com
+          git config --global user.name GitHub          
       - name: package
         run: ./gradlew clean release
       - name: release
